@@ -1,4 +1,44 @@
-<h1>TEST</h1>
-<h4>This is another test.</h4>
-<h4> One more change.</h4>
-<h3>Make a change here for Princeton</h3>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Travel Guide</title>
+  <!-- Materialize CSS CDN Link to be uncommented later -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Travel Guide</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="/signup">Sign Up</a></li>
+          </ul>
+        <ul class="right">
+            <li><a href="/login">Log In</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="/experiences">Experiences</a></li>
+        </ul>
+        <ul class="right">
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="page-footer">
+    <div class="right">All Rights Reserved, &copy; 2022 J&A &nbsp;</div>
+  </footer>
+</body>
+</html>
