@@ -4,13 +4,15 @@
 
 ### Deploy To Heroku Link Here 
 
-## Trello Board 
+## 🔧 Trello Board 
 
-## Wireframe 
+## 🔗 Wireframe 
 
-## ERD 
+## ⚙️ ERD 
 
 # ❗ Challenges 
 
 # 🗝️ Key Takeaways
+
+# ✈️ Next Steps
 
