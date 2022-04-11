@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cities List</h1>
+<a class="btn" href="{% url 'city_create' %}">Add a City</a>
+{% for city in cities %}
+  <div class="card">
+      <a href="{% url 'city_detail' city.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ city.name }}</span>
+      <!-- <p>Population: {{ city.population }}</p>
+      <p>Languages: {{ city.languages }}</p>
+      <p>Currency: {{ city.currency }}</p> -->
+    </div>
+      </a>
+  </div>
+{% endfor %}
+{% endblock %}
