@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Experiences List</h2>
+<a class="btn" href="{% url 'experience_create' %}">Add a new Experience</a>
+{% for experience in experiences %}
+  <div class="card">
+      <a href="#">
+    <div class="card-content">
+      <span class="card-title">{{experience.eventname}}</span>
+      <!-- <p>Population: {{ city.population }}</p>
+      <p>Languages: {{ city.languages }}</p>
+      <p>Currency: {{ city.currency }}</p> -->
+    </div>
+      </a>
+  </div>
+{% endfor %}
+{% endblock %}
