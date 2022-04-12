@@ -9,7 +9,8 @@ urlpatterns = [
     path('cities/create/', views.CityCreate.as_view(), name='city_create'),
     path('cities/<int:pk>/update/', views.CityUpdate.as_view(), name='city_update'),
     path('cities/<int:pk>/delete/', views.CityDelete.as_view(), name='city_delete'),
-    # path('experiences/', views.experiences_index, name='experiences_index'),
+    path('experiences/', views.experiences_index, name='experiences_index'),
+    path('experiences/create/', views.ExperienceCreate.as_view(), name='experience_create'),
 
 ]
 

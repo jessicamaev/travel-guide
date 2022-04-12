@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import City
+from .models import City, Experiences
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 class CityCreate(CreateView):
@@ -14,12 +14,15 @@ class CityUpdate(UpdateView):
   fields = ['population', 'languages', 'currency']
   success_url = '/cities/'
 
-
 class CityDelete(DeleteView):
   model = City
   success_url = '/cities/'
 
-# Define the home view
+class ExperienceCreate(CreateView):
+  model = Experiences
+  fields = '__all__'
+  success_url = '/experiences/'
+
 def home(request): 
     return HttpResponse('<h1>made a change here Hello here it is /ᐠ｡‸｡ᐟ\ﾉ</h1>')
 
@@ -34,10 +37,19 @@ def city_detail(request, city_id):
   city = City.objects.get(id=city_id)
   return render(request, 'cities/citydetail.html', { 'city': city })
 
+def experiences_index(request):
+    experiences = Experiences.objects.all()
+    return render(request, 'experiences/index.html', { 'experiences': experiences })
 
 
-def experiences(request):
-    return render(request, 'experiences.html')
+
+
+
+
+
+
+
+
 
 # class City:  # Note that parens are optional if not inheriting from another class
 #   def __init__(self, name, population, languages, currency):
