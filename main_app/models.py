@@ -13,7 +13,7 @@ class City(models.Model):
         return self.name
     
     def get_absolute_url(self):
-         return reverse('citydetail', kwargs={'city_id': self.id})
+        return reverse('citydetail', kwargs={'city_id': self.id})
 
 class Experiences(models.Model):
     eventname = models.CharField(max_length=100)

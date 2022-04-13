@@ -13,3 +13,7 @@ footer.page-footer {
   padding-top: 0;
   text-align: right;
 }
+
+select{
+  display: block;
+}

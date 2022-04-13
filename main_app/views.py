@@ -1,7 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import City, Experiences
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .forms import ExperiencesForm
 
 class CityCreate(CreateView):
   model = City
@@ -18,10 +19,21 @@ class CityDelete(DeleteView):
   model = City
   success_url = '/cities/'
 
-class ExperienceCreate(CreateView):
-  model = Experiences
-  fields = '__all__'
-  success_url = '/experiences/'
+# class ExperienceCreate(CreateView):
+#   model = Experiences
+#   fields = '__all__'
+#   form = ExperiencesForm
+#   success_url = '/experiences/'
+
+def experiences_create(request):
+  if request.method == 'POST':
+    form = ExperiencesForm(request.POST)
+    form.save()
+    return redirect('experiences/')
+  form = ExperiencesForm()
+  return render(request, 'main_app/experiences_form.html', {'form': form} )
+
+
 
 def home(request): 
     return HttpResponse('<h1>made a change here Hello here it is /ᐠ｡‸｡ᐟ\ﾉ</h1>')
