@@ -28,6 +28,9 @@ class Experiences(models.Model):
     def __str__(self):
         return self.eventname
 
+    def get_absolute_url(self):
+        return reverse('experiencedetail', kwargs={'experience_id': self.id})
+
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)
