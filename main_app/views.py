@@ -84,7 +84,6 @@ def add_photo(request, city_id):
     if photo_file:
         s3 = boto3.client('s3')
         # need a unique "key" for S3 / needs image file extension too
-        # question on where to find unique key
         key = uuid.uuid4().hex[:6] + \
             photo_file.name[photo_file.name.rfind('.'):]
         # just in case something goes wrong
@@ -96,7 +95,8 @@ def add_photo(request, city_id):
         except Exception as e:
             print(e)
             print('x-----error above-----x')
-            # question on redirect
+      
+         
     return redirect('city_detail', city_id=city_id)
 
 
