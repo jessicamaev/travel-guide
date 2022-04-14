@@ -1,5 +1,4 @@
 body {
-    /* background-color: red; */
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -17,3 +16,21 @@ footer.page-footer {
 select{
   display: block;
 }
+
+.nav {
+  background-color: #01579b !important;
+}
+
+.footer{
+  background-color: #01579b !important;
+}
+
+.card {
+  width: 50%;
+  float: left;
+}
+.card-content{
+  text-align: center;
+  font-weight: bold;
+  
+  }
