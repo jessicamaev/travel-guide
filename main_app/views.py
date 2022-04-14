@@ -26,6 +26,16 @@ class CityDelete(DeleteView):
     model = City
     success_url = '/cities/'
 
+class ExperienceUpdate(UpdateView):
+  model = Experiences
+  # Let's disallow the renaming of a cat by excluding the name field!
+  fields = ['eventname', 'eventdate', 'eventtime', 'address', 'eventdescription',
+        'eventlink', 'city']
+  success_url = '/experiences/'
+
+class ExperienceDelete(DeleteView):
+  model = Experiences
+  success_url = '/experiences/'
 
 # class ExperienceCreate(CreateView):
 #   model = Experiences
@@ -42,8 +52,8 @@ def experiences_create(request):
   return render(request, 'main_app/experiences_form.html', {'form': form} )
 
 
-def home(request):
-    return HttpResponse('<h1>made a change here Hello here it is /ᐠ｡‸｡ᐟ\ﾉ</h1>')
+# def home(request):
+#     return HttpResponse('<h1>made a change here Hello here it is /ᐠ｡‸｡ᐟ\ﾉ</h1>')
 
 
 def about(request):
@@ -64,6 +74,10 @@ def experiences_index(request):
     experiences = Experiences.objects.all()
     return render(request, 'experiences/index.html', {'experiences': experiences})
 
+def experience_detail(request, experience_id):
+    experience = Experiences.objects.get(id=experience_id)
+    return render(request, 'experiences/experiencedetail.html', {'experience': experience})
+
 
 def add_photo(request, city_id):
     photo_file = request.FILES.get('photo-file', None)
@@ -78,9 +92,11 @@ def add_photo(request, city_id):
             url = f"{S3_BASE_URL}{BUCKET}/{key}"
             photo = Photo(url=url, city_id=city_id)
             photo.save()
-        except:
-            print('An error occurred uploading file to S3')
-          
+        except Exception as e:
+            print(e)
+            print('x-----error above-----x')
+      
+         
     return redirect('city_detail', city_id=city_id)
 
 
