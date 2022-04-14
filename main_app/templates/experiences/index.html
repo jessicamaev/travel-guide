@@ -5,7 +5,7 @@
 <a class="btn" href="{% url 'experience_create' %}">Add a new Experience</a>
 {% for experience in experiences %}
   <div class="card">
-      <a href="#">
+      <a href="{% url 'experience_detail' experience.id %}">
     <div class="card-content">
       <span class="card-title">{{experience.eventname}}</span>
       <!-- <p>Population: {{ city.population }}</p>

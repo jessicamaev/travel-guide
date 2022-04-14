@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Experience Details</h1>
+<div class="row">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ experience.eventname }}</span>
+        <p>Event Date: {{ experience.eventdate }}</p>
+        <p>Event Time: {{ experience.eventtime }}</p>
+        <p>Address: {{ experience.address }}</p>
+        <p>Event Description: {{ experience.eventdescription }}</p>
+        <p>Event link: {{ experience.eventlink }}</p>
+        <p>City: {{ experience.city }}</p>
+
+        <div class="card-action">
+          <a href="{% url 'experience_update' experience.id %}">Edit</a>
+          <a href="{% url 'experience_delete' experience.id %}">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col s6">
+    <table class="card">
+      <thead>
+        <tr>
+          <th>Event Date</th>
+          <th>Event Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for experiences in city.experiences_set.all %}
+        <tr>
+          <td>{{experiences.eventdate}}</td>
+          <td>{{experiences.eventname}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div> -->
+
+</div>
+
+
+
+
+{% endblock %}
