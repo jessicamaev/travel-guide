@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Experience Details</h1>
+<h1>{{ experience.eventname }} details</h1>
 <div class="row">
-  <div class="col s6">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ experience.eventname }}</span>
+  <div>
+    <div>
+      <div>
+        <!-- <span class="card-title">{{ experience.eventname }}</span> -->
         <p>Event Date: {{ experience.eventdate }}</p>
         <p>Event Time: {{ experience.eventtime }}</p>
         <p>Address: {{ experience.address }}</p>
         <p>Event Description: {{ experience.eventdescription }}</p>
         <p>Event link: {{ experience.eventlink }}</p>
         <p>City: {{ experience.city }}</p>
-
+        {% if user.is_authenticated %}
         <div class="card-action">
-          <a href="{% url 'experience_update' experience.id %}">Edit</a>
-          <a href="{% url 'experience_delete' experience.id %}">Delete</a>
+          <a class="btn" href="{% url 'experience_update' experience.id %}">Edit</a>
+          <a class="btn" href="{% url 'experience_delete' experience.id %}">Delete</a>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
