@@ -1,6 +1,8 @@
 # 🌍 Travel Guide 
 
-Pick your city and generate your unique destination with J&A Travel Guide. The J&A is the Journey and Adventure of travel and experiences. 
+Pick your city and generate your unique destination with J&A Travel Guide. Easy-to use, J&A Guide takes the Journey and Adventure of travel and focuses on the experiences. Easy-to use, just pick a city and users can create, edit, and delete their unique experiences. Users can also add photos of memorable moments. 
+
+Visit J&A Travel Now: 
 
 # 🗺️ About The Project 
 
@@ -31,9 +33,8 @@ Day 7  | CSS
 Day 8  | Authentication
 Day 9  | Deploy to Heroku
 
-### Deploy To Heroku Link Here 
-
 ## 🔧 Trello Board 
+
 
 ## 🔗 Wireframe 
 
@@ -41,7 +42,12 @@ Day 9  | Deploy to Heroku
 
 # ❗ Challenges 
 
+
 # 🗝️ Key Takeaways
 
+
 # ✈️ Next Steps
+
+* Add third party API 
+* Add Search Function on home page
 
