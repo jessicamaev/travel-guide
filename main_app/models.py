@@ -24,6 +24,8 @@ class Experiences(models.Model):
     eventdescription = models.TextField(max_length=500)
     eventlink = models.CharField(max_length=100)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.eventname

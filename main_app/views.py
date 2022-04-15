@@ -5,35 +5,44 @@ from .forms import ExperiencesForm
 from .models import City, Experiences, Photo
 import uuid
 import boto3
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
 
 S3_BASE_URL = 'https://s3.ca-central-1.amazonaws.com/'
 BUCKET = 'travelguide1'
 
-class CityCreate(CreateView):
+
+class CityCreate(LoginRequiredMixin, CreateView):
     model = City
     fields = '__all__'
     success_url = '/cities/'
 
 
-class CityUpdate(UpdateView):
+class CityUpdate(LoginRequiredMixin, UpdateView):
     model = City
     # Disallowing the renaming of a city by excluding the name field
     fields = ['population', 'languages', 'currency']
     success_url = '/cities/'
 
 
-class CityDelete(DeleteView):
+class CityDelete(LoginRequiredMixin, DeleteView):
     model = City
     success_url = '/cities/'
 
-class ExperienceUpdate(UpdateView):
+
+class ExperienceUpdate(LoginRequiredMixin, UpdateView):
   model = Experiences
   # Let's disallow the renaming of a cat by excluding the name field!
   fields = ['eventname', 'eventdate', 'eventtime', 'address', 'eventdescription',
         'eventlink', 'city']
   success_url = '/experiences/'
 
-class ExperienceDelete(DeleteView):
+
+class ExperienceDelete(LoginRequiredMixin, DeleteView):
   model = Experiences
   success_url = '/experiences/'
 
@@ -47,9 +56,15 @@ def experiences_create(request):
   if request.method == 'POST':
     form = ExperiencesForm(request.POST)
     form.save()
-    return redirect('experiences/')
+    return redirect('/experiences/')
   form = ExperiencesForm()
   return render(request, 'main_app/experiences_form.html', {'form': form} )
+
+def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user  # form.instance is the cat
+    # Let the CreateView do its job as usual
+    return super().form_valid(form)
 
 
 # def home(request):
@@ -78,7 +93,7 @@ def experience_detail(request, experience_id):
     experience = Experiences.objects.get(id=experience_id)
     return render(request, 'experiences/experiencedetail.html', {'experience': experience})
 
-
+@login_required
 def add_photo(request, city_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
@@ -99,7 +114,24 @@ def add_photo(request, city_id):
          
     return redirect('city_detail', city_id=city_id)
 
-
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    # This is how to create a 'user' form object
+    # that includes the data from the browser
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      # This will add the user to the database
+      user = form.save()
+      # This is how we log a user in via code
+      login(request, user)
+      return redirect('/')
+    else:
+      error_message = 'Invalid sign up - try again'
+  # A bad POST or a GET request, so render signup.html with an empty form
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
 # class City:  # Note that parens are optional if not inheriting from another class
 #   def __init__(self, name, population, languages, currency):
 #     self.name = name
