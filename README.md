@@ -44,6 +44,8 @@ https://trello.com/b/Sa4YFFrx/unit3-project-travel-guide
 
 ## ⚙️ ERD 
 
+![ERD](https://user-images.githubusercontent.com/80486307/163651523-f7228e70-e09c-4063-81fe-16ef6e0d957a.png)
+
 
 # ❗ Challenges 
 
