@@ -2,7 +2,9 @@
 {% block content %}
 
 <h2>Cities List</h2>
+{% if user.is_authenticated %}
 <a class="btn" href="{% url 'city_create' %}">Add a City</a>
+{% endif %}
 {% for city in cities %}
 <div class="card">
   <a href="{% url 'city_detail' city.id %}">

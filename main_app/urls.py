@@ -15,4 +15,5 @@ urlpatterns = [
     path('experiences/<int:pk>/update/', views.ExperienceUpdate.as_view(), name='experience_update'),
     path('experiences/<int:pk>/delete/', views.ExperienceDelete.as_view(), name='experience_delete'),
     path('cities/<int:city_id>/add_photo/', views.add_photo, name='add_photo'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]
