@@ -8,7 +8,7 @@ Visit J&A Travel Now:
 
 Develop a <b>full-stack app that uses the Python-based Django Web Framework</b> with a team of two. 
 
-Your App Must: https://jessicamaev.github.io/travel-guide/
+Your App Must: 
 
 * Be a full-stack Django application.
 * Have at least one data entity (Model) in addition to the built-in User model.
