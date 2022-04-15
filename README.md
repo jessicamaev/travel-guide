@@ -28,9 +28,7 @@ Day 1  | Brainstorm, Research, and Plan
 Day 2-3 | Trello, Wireframe, ERD, Create shell| 
 Day 4  | Create base: Views, Urls, Templates
 Day 5 | Uploading images in Django using AWS (Amazon Web Services) | 
-Day 6  | Remove edit and delete for cities and experiences
-Day 7  | CSS
-Day 8  | Authentication
+Day 6 - 8  | CSS, Authentication, Final Touches
 Day 9  | Deploy to Heroku
 
 ## 🔧 Trello Board 
