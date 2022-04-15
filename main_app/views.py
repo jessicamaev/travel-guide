@@ -52,6 +52,7 @@ class ExperienceDelete(LoginRequiredMixin, DeleteView):
 #   success_url = '/experiences/'
 
 
+@login_required
 def experiences_create(request):
     if request.method == 'POST':
         form = ExperiencesForm(request.POST)
