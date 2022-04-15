@@ -132,3 +132,6 @@ LOGIN_REDIRECT_URL = '/experiences/'
 
 # Add this variable to specify where logging out redirects to
 LOGOUT_REDIRECT_URL = '/'
+
+import django_heroku
+django_heroku.settings(locals())
