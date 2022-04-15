@@ -47,5 +47,6 @@ Day 9  | Deploy to Heroku
 # ✈️ Next Steps
 
 * Add third party API 
-* Add Search Function on home page
+* Add Search Function on home/about page
+* Button from home/about page
 
