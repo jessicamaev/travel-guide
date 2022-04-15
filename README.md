@@ -33,16 +33,27 @@ Day 9  | Deploy to Heroku
 
 ## 🔧 Trello Board 
 
+https://trello.com/b/Sa4YFFrx/unit3-project-travel-guide
+
+![Trello Board](https://user-images.githubusercontent.com/80486307/163650866-52f8ecda-969c-4b16-860a-3ad648b7ed15.png)
+
 
 ## 🔗 Wireframe 
 
+![Wireframe](https://user-images.githubusercontent.com/80486307/163650840-4af4fd5d-40a4-47f9-a6e0-89e14dcbcd6e.png)
+
 ## ⚙️ ERD 
+
 
 # ❗ Challenges 
 
+* Third Party API 
+* Deploy to Heroku 
 
 # 🗝️ Key Takeaways
 
+* First time working with a team -> prioritize initial planning
+* Materialize CSS set up
 
 # ✈️ Next Steps
 
