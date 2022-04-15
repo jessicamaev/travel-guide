@@ -2,7 +2,7 @@
 
 Pick your city and generate your unique destination with J&A Travel Guide. Easy-to use, J&A Guide takes the Journey and Adventure of travel and focuses on the experiences. Easy-to use, just pick a city and users can create, edit, and delete their unique experiences. Users can also add photos of memorable moments. 
 
-Visit J&A Travel Now: 
+Visit J&A Travel Now: https://guidetravel.herokuapp.com/
 
 # 🗺️ About The Project 
 
