@@ -1,77 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Guide</title>
-</head>
-
-<body>
     {% extends 'base.html' %}
     {% block content %}
     <h1>Welcome to J&A Travel Guide</h1>
     <p class="flow-text">Pick your city and generate your unique destination with J&A Travel Guide</p>
 
-
+    {% for city in cities %}
     <div class="index-banner color2">
         <div class="section">
-
             <div class="row">
                 <div class="col s6 m12">
                     <div class="card">
                         <div class="card-image">
                             <img
-                                src="https://media.istockphoto.com/photos/view-of-the-city-from-park-guell-in-barcelona-spain-picture-id1136326969?b=1&k=20&m=1136326969&s=170667a&w=0&h=bqhvLQmGhJyLtB5As2468Wz99gdbmg6Ug8V3cJQVLy4=">
-                            <span class="card-title">Barcelona</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                src="{{city.imagelink}}">
+                            <span class="card-title">{{ city.name }}</span>
+                            <a href="{% url 'city_detail' city.id %}" class="btn-floating halfway-fab waves-effect waves-light red"><i
                                     class="material-icons">GO</i></a>
                         </div>
                         <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am
-                                convenient
-                                because I require little markup to use effectively.</p>
+                            <p>Card Description</p>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img
-                                src="https://media.istockphoto.com/photos/aerial-view-of-tokyo-cityscape-with-fuji-mountain-in-japan-picture-id1131743616?b=1&k=20&m=1131743616&s=170667a&w=0&h=stgpBO1SxauKdLh-9dcCecTZiGdkPapISKRs9oxuwFU=">
-                            <span class="card-title">Tokyo</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                    class="material-icons">GO</i></a>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am
-                                convenient
-                                because I require little markup to use effectively.</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1CsDZZw0BNPIg9Li9avkWJWr3Orkxz7E6pw&usqp=CAU">
-                            <span class="card-title">London</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                    class="material-icons">GO</i></a>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am
-                                convenient
-                                because I require little markup to use effectively.</p>
-                        </div>
-                    </div>
+                   
+                    
                 </div>
             </div>
         </div>
     </div>
+    {% endfor %}
 
     {% endblock %}
-    <footer>All Rights Reserved, &copy; 2022 J&A </footer>
-
-</body>
-
-</html>
+    

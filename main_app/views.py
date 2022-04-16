@@ -79,7 +79,7 @@ def about(request):
 
 def cities_index(request):
     cities = City.objects.all()
-    return render(request, 'cities/index.html', {'cities': cities})
+    return render(request, 'about.html', {'cities': cities})
 
 
 def city_detail(request, city_id):
