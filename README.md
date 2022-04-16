@@ -51,15 +51,14 @@ https://trello.com/b/Sa4YFFrx/unit3-project-travel-guide
 
 * Third Party API 
 * Deploy to Heroku 
+* Editing CSS in Materialize
 
 # 🗝️ Key Takeaways
 
 * First time working with a team -> prioritize initial planning
-* Materialize CSS set up
 
 # ✈️ Next Steps
 
 * Add third party API 
-* Add Search Function on home/about page
-* Button from home/about page
+* CSS
 
