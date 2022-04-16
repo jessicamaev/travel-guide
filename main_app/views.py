@@ -18,19 +18,19 @@ BUCKET = 'travelguide1'
 class CityCreate(LoginRequiredMixin, CreateView):
     model = City
     fields = '__all__'
-    success_url = '/cities/'
+    success_url = '/'
 
 
 class CityUpdate(LoginRequiredMixin, UpdateView):
     model = City
     # Disallowing the renaming of a city by excluding the name field
     fields = ['population', 'languages', 'currency']
-    success_url = '/cities/'
+    success_url = '/'
 
 
 class CityDelete(LoginRequiredMixin, DeleteView):
     model = City
-    success_url = '/cities/'
+    success_url = '/'
 
 
 class ExperienceUpdate(LoginRequiredMixin, UpdateView):
@@ -116,6 +116,20 @@ def add_photo(request, city_id):
             print('x-----error above-----x')
 
     return redirect('city_detail', city_id=city_id)
+
+def search(request):
+    cities = City.objects.all()
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            cities = cities.filter(name__icontains=keyword)
+    
+    data = {
+        'cities': cities
+    }
+    return render(request, 'search.html', data)
+
+
 
 
 def signup(request):

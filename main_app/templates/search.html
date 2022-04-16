@@ -1,17 +1,7 @@
-    {% extends 'base.html' %}
-    {% block content %}
-    <h1>Welcome to J&A Travel Guide</h1>
-    <p class="flow-text">Pick your city and generate your unique destination with J&A Travel Guide</p>
+{% extends 'base.html' %}
+{% block content %}
 
-    <form method="GET" action="{% url 'search' %}" class="row text-center">
-        <div class="col-md-auto">
-            <input name="keyword" class="form-control" placeholder="Search City">
-            <button type="submit" class="btn">Search</button>
-            </div>
-        </div>
-
-    </form>
-    {% for city in cities %}
+{% for city in cities %}
     <div class="index-banner color2">
         <div class="section">
             <div class="row">
@@ -29,13 +19,5 @@
                         </div> -->
                     </div>
 
-                   
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-
-    {% endblock %}
-    
+                    {% endfor %}
+{% endblock %}
