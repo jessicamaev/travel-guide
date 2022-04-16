@@ -8,6 +8,8 @@ class City(models.Model):
     population = models.IntegerField()
     languages = models.TextField(max_length=250)
     currency = models.CharField(max_length=3)
+    imagelink = models.CharField(max_length=100)
+    
 
     def __str__(self):
         return self.name
