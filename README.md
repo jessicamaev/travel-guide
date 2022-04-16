@@ -56,6 +56,7 @@ https://trello.com/b/Sa4YFFrx/unit3-project-travel-guide
 # 🗝️ Key Takeaways
 
 * First time working with a team -> prioritize initial planning
+* GitHub
 
 # ✈️ Next Steps
 
