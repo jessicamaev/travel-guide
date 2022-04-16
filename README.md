@@ -52,6 +52,9 @@ https://trello.com/b/Sa4YFFrx/unit3-project-travel-guide
 * Third Party API 
 * Deploy to Heroku 
 * Editing CSS in Materialize
+* Search implementation
+* Getting foreign key values into Django template
+
 
 # 🗝️ Key Takeaways
 
